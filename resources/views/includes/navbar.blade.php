@@ -5,18 +5,18 @@
             <nav class="limiter-menu-desktop container">
 
                 <!-- Logo desktop -->
-                <a href="#" class="logo">
-                    <img src="frontend/logo/logo.png" alt="IMG-LOGO">
+                <a href="{{route('home')}}" class="logo">
+                    <img src="{{url('frontend/logo/logo.png')}}" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
                     <ul class="main-menu">
-                        <li class="active-menu">
-                            <a href="index.html">Beranda</a>
+                        <li class="{{ request()->is('/') ? 'active-menu' : '' }}">
+                            <a href="{{route('home')}}">Beranda</a>
                         </li>
-                        <li>
-                            <a href="product.html">Belanja</a>
+                        <li class="{{ request()->is('product-mebel') ? 'active-menu' : '' }}">
+                            <a href="{{route('product-front')}}">Belanja</a>
                         </li>
                         <li>
                             <a href="about.html">Tentang</a>
@@ -45,10 +45,18 @@
                         <i class="zmdi zmdi-favorite-outline"></i>
                     </a>
 
+                    @guest
                     <li class="nav-item px-3 px-xl-4">
                         <button class="btn btn-outline-dark order-1 order-lg-0 fw-medium"
                             role="button" type="button" onclick="event.preventDefault(); location.href='{{ url('login') }}';">Masuk</button>
                     </li>
+                    @endguest
+                    @auth
+                    <li class="nav-item px-3 px-xl-4">
+                        <button class="btn btn-outline-dark order-1 order-lg-0 fw-medium"
+                            role="button" type="button" onclick="event.preventDefault(); location.href='{{ url('logout') }}';">Keluar</button>
+                    </li>
+                    @endauth
 
                 </div>
             </nav>
@@ -59,7 +67,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="index.html"><img src="frontend/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="index.html"><img src="{{url('frontend/logo/logo.png')}}" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
@@ -116,7 +124,7 @@
     <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
         <div class="container-search-header">
             <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-                <img src="frontend/images/icons/icon-close2.png" alt="CLOSE">
+                <img src="{{url('frontend/images/icons/icon-close2.png')}}" alt="CLOSE">
             </button>
 
             <form class="wrap-search-header flex-w p-l-15">

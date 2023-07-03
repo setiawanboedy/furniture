@@ -46,7 +46,7 @@ class ProductController extends Controller
             'assets/gallery', 'public'
         );
         $ran = Str::random(5);
-        $data['slug'] = str::slug($request->title).'-'.$ran;
+        $data['slug'] = str::slug($request->name).'-'.$ran;
         Product::create($data);
 
         return redirect()->route('product.index');
@@ -87,7 +87,8 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $id)
     {
         $data = $request->all();
-
+        $ran = Str::random(5);
+        $data['slug'] = str::slug($request->name).'-'.$ran;
         $data['image'] = $request->file('image')->store(
             'assets/gallery', 'public'
         );

@@ -17,6 +17,8 @@ Route::namespace('App\Http\Controllers')
 ->group(function(){
 
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/detail/{slug}', 'ProductDetailController@index')->name('detail');
+    Route::get('/product-mebel', 'ProductController@index')->name('product-front');
 
 });
 

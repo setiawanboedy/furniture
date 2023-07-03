@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
-class HomeController extends Controller
+class ProductController extends Controller
 {
     public function index(Request $request)
     {
         $products = Product::get();
 
-        return view('pages.home',[
+        return view('pages.product',[
             'products'=>$products
         ]);
     }

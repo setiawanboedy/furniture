@@ -79,7 +79,7 @@ class GalleryController extends Controller
 
         return view('pages.admin.gallery.edit',[
             'item'=>$item,
-            'product'=>$products
+            'products'=>$products
         ]);
     }
 

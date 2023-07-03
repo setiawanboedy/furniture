@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Makan - Wisata Kuliner
+    Makan - Nisa Mebel product
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="property-item rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                            <a href="{{route('kuliner-detail', $item->id)}}"><img class="img-fluid" src="{{Storage::url($item->image)}}" alt=""></a>
+                            <a href="{{route('product-detail', $item->id)}}"><img class="img-fluid" src="{{Storage::url($item->image)}}" alt=""></a>
                             <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">{{$item->status}}</div>
                             <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"><span class="fa fa-star" style="color: orange;"></span> 4.5</div>
                         </div>

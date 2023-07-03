@@ -1,15 +1,14 @@
 @extends('layouts.admin')
-@section('title', 'Admin - Nomer Booking')
-
+@section('title', 'Gambar Mebel')
 @section('content')
     <!-- Begin Page Content -->
-    <div class="container-fluid content content-admin" >
+    <div class="container-fluid content">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Nomer Booking</h1>
-            <a href="{{ route('booking-number.create') }}" class="btn btn-sm btn-primary shadow-sm">
-                <i class="text-white-50"></i> Tambah Nomer Booking
+            <h1 class="h3 mb-0 text-gray-800">Gallery</h1>
+            <a href="{{ route('gallery.create') }}" class="btn btn-sm btn-primary shadow-sm">
+                <i class="fa fa-plus fa-sm text-white-50"></i> Tambah Galeri
             </a>
         </div>
 
@@ -19,9 +18,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Tempat Kuliner</th>
-                            <th>Nomer</th>
-                            <th>Paket</th>
+                            <th>Produk</th>
+                            <th>Gambar</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -29,14 +27,16 @@
                         @forelse ($items as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->kuliner_place->name }}</td>
-                                <td>{{ $item->nomer }}</td>
-                                <td>{{ $item->paket }}</td>
+                                <td>{{ $item->product -> name }}</td>
+
                                 <td>
-                                    <a href="{{route('booking-number.edit', $item->id) }}" class="btn btn-info">
+                                    <img src="{{Storage::url($item->image)}}" alt="" style="width: 150px" class="img-thumbnail">
+                                </td>
+                                <td>
+                                    <a href="{{route('gallery.edit', $item->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil"></i>
                                     </a>
-                                    <form action="{{route('booking-number.destroy', $item->id)}}" method="post" class="d-inline">
+                                    <form action="{{route('gallery.destroy', $item->id)}}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">
@@ -54,10 +54,9 @@
                         @endforelse
                     </tbody>
                 </table>
-
             </div>
-
         </div>
+
     </div>
     <!-- /.container-fluid -->
 @endsection

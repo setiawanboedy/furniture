@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKulinerPackagesTable extends Migration
+class CreateProductGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateKulinerPackagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('kuliner_places', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('status')->default('Buka');
+            $table->integer('product_id');
             $table->text('image');
-            $table->string('avgprice');
-            $table->string('address');
-            $table->integer('table');
-            $table->integer('room');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateKulinerPackagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kuliner_places');
+        Schema::dropIfExists('galleries');
     }
 }

@@ -1,11 +1,11 @@
 @extends('layouts.auth')
-@section('title', 'Daftar - Makan')
+@section('title', 'Daftar - Nisa Mebel')
 @section('content')
 
     <div class="flex flex-col overflow-y-auto md:flex-row">
         <div class="h-32 md:h-auto md:w-1/2">
             <img aria-hidden="true" class="object-cover w-full h-full dark:hidden"
-                src="{{ url('frontend/img/create-account-office.jpeg') }}" alt="Office" />
+                src="{{ url('frontend/img/login-office.jpeg') }}" alt="Office" />
 
         </div>
         <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
@@ -54,27 +54,16 @@ is-invalid
                     </label>
                     <label class="block mt-4 text-sm" for="password-confirm">
                         <span class="text-gray-700 dark:text-gray-400">
-                            Confirm password
+                            Konfirmasi password
                         </span>
                         <input type="password" name="password_confirmation" required autocomplete="new-password"
                             class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                             placeholder="***************" />
                     </label>
 
-                    <div class="flex mt-6 text-sm">
-                        <label class="flex items-center dark:text-gray-400">
-                            <input type="checkbox"
-                                class="text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" />
-                            <span class="ml-2">
-                                I agree to the
-                                <span class="underline">privacy policy</span>
-                            </span>
-                        </label>
-                    </div>
-
                     <!-- You should use a button here, as the anchor is only used for the example  -->
                     <button
-                    style="background-color: #0e9f6e"
+                    style="background-color: #333333"
                     type="submit" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border border-transparent rounded-lg hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                         >
                         Buat akun
@@ -84,7 +73,7 @@ is-invalid
                 <hr class="my-8" />
 
                 <p class="mt-4">
-                    <a class="text-sm font-medium text-green-500 dark:text-purple-400 hover:underline" href="./login.html">
+                    <a style="color: #333333" class="text-sm font-medium text-green-500 dark:text-purple-400 hover:underline" href="{{route('login')}}">
                         Sudah punya akun? Masuk
                     </a>
                 </p>

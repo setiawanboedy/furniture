@@ -16,10 +16,9 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Tempat Kuliner</th>
+                            <th>Nama Mebel</th>
                             <th>Pemesan</th>
-                            <th>Nomer Meja</th>
-                            <th>Tanggal dan Waktu</th>
+                            <th>Tanggal</th>
                             <th>Total</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -29,10 +28,9 @@
                         @forelse ($items as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->kuliner_place->name }}</td>
+                                <td>{{ $item-> product }}</td>
                                 <td>{{ $item->user->name }}</td>
-                                <td>{{ $item->booking_number->nomer}}</td>
-                                <td>{{$item->date}} & {{$item->time}}</td>
+                                <td>{{$item->date}}</td>
                                 <td>Rp {{ $item->transaction_total }}</td>
                                 <td>{{ $item->transaction_status }}</td>
                                 <td>

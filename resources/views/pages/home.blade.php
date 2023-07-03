@@ -1,265 +1,578 @@
 @extends('layouts.app')
 
 @section('title')
-    Makan - Wisata Kuliner
+    Nisa - Mebel
 @endsection
 
 @section('content')
-    <!-- Header Start -->
-    <div class="container header bg-white p-0 mt-4 mb-lg-5">
-        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-            <div class="col-md-6 p-5 mt-lg-5">
-                <h1 class="display-5 animated fadeIn mb-4">Temukan <span class="text-primary">Tempat Makan</span> yang Nyaman
-                    dan Enak</h1>
-                <p class="animated fadeIn mb-4 pb-2">Booking tempat makan yang nyaman langsung di sini. Tidak perlu khawatir
-                    kehabisan tempat dan banyak pilihan restonya.</p>
-                <a href="#kuliner" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Pilih Tempat</a>
-            </div>
-            <div class="col-md-6 animated fadeIn">
-                <div class="owl-carousel header-carousel">
-                    <div class="owl-carousel-item">
-                        <img class="img-fluid"
-                            src="https://jnewsonline.com/wp-content/uploads/2021/06/144824588_451595515972683_1578488716308310779_n-1024x1024.jpg"
-                            alt="">
-                    </div>
-                    <div class="owl-carousel-item">
-                        <img class="img-fluid"
-                            src="https://indonesia.tripcanvas.co/id/wp-content/uploads/sites/2/2020/06/3-1-outdoor-via-jojothen.jpg"
-                            alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
+    	<!-- Slider -->
+	<section class="section-slide">
+		<div class="wrap-slick1">
+			<div class="slick1">
+				<div class="item-slick1" style="background-image: url(frontend/img/kursi.png);">
+					<div class="container h-full">
+						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
+							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
+								<span class="ltext-101 cl2 respon2">
+									Estetik
+								</span>
+							</div>
+
+							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
+									KURSI NYAMAN
+								</h2>
+							</div>
+
+							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
+								<a href="product.html"
+									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+									Belanja
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick1" style="background-image: url(frontend/img/bangku.jpg);">
+					<div class="container h-full">
+						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
+							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
+								<span class="ltext-101 cl2 respon2">
+									Moderen
+								</span>
+							</div>
+
+							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn"
+								data-delay="800">
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
+									sofa nyaman
+								</h2>
+							</div>
+
+							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
+								<a href="product.html"
+									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+									Belanja
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
-    <!-- Category Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">Kategori Makanan</h1>
-                <p>Pilih jenis makanan yang kamu suka. </p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid rounded-3"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/93cd9871-814f-4121-94d9-96430c3111a4_tag-image_1608202898934.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Jajanan</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/92004beb-7acf-46f1-9e21-6b80bd10a8ae_tag-image_1608203017089.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Bakso & Soto</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/8e133f59-d50f-41b0-bfa7-1a61a074cc8b_tag-image_1608202870005.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Minuman</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/5e117b21-4c43-46e0-9b78-05f67960fb36_tag-image_1608203141910.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Seafood</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/7761a441-928a-487a-acd5-0df24f318c91_tag-image_1608202965341.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Cepat Saji</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/e709853b-1a90-4d64-90b4-1f547334685d_tag-image_1608203031931.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Bakmi</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/e59878b4-a46e-4cbb-a887-23df3e8b5eda_tag-image_1608203153518.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Timur Tengah</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                        <div class="rounded p-4">
-                            <div class="icon mb-3">
-                                <img class="img-fluid"
-                                    src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/dbd649d7-fcd7-404f-91f3-537af629044f_tag-image_1608203186648.jpg?fit=crop&w=70&h=70&auto=format"
-                                    alt="Icon">
-                            </div>
-                            <h6>Roti</h6>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Category End -->
+	<!-- Banner -->
+	<div class="sec-banner bg0 p-t-80 p-b-50">
+		<div class="container">
+			<h3 class="ltext-101 cl5">
+				Rekomendasi untuk Anda
+			</h3>
+			<br>
+
+			<div id="carouselExampleControls" class="carousel" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active mr-2">
+						<div class="p-b-30 m-lr-auto">
+							<div class="block2">
+								<div class="block2-pic hov-img0 recom-size">
+									<div class="image-wrapper" >
+										<img class="d-block w-100 img-fluid" src="https://www.nicepng.com/png/full/24-248700_sofa-free-png-image-furniture-photos-transparent-background.png" alt="IMG-PRODUCT">
+									</div>
+
+									<a href="#"
+										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+										Lihat
+									</a>
+								</div>
+
+								<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt-child1 flex-col-l ">
+										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+											Esprit Ruffle Shirt
+										</a>
+
+										<span class="stext-105 cl3">
+											$16.64
+										</span>
+									</div>
+
+									<div class="block2-txt-child2 flex-r p-t-3">
+										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
+												alt="ICON">
+											<img class="icon-heart2 dis-block trans-04 ab-t-l"
+												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item active mr-2">
+						<div class="p-b-30 m-lr-auto">
+
+							<div class="block2" >
+								<div class="block2-pic hov-img0 recom-size">
+									<div class="image-wrapper" >
+										<img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_P-VYCZwqxnL6QIye0AfAL9ddnY5NzTYiANEKaCLutz1ti3FRq36pRSsCbVtl8jK6AA&usqp=CAU" alt="IMG-PRODUCT">
+									</div>
+
+									<a href="#"
+										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+										Lihat
+									</a>
+								</div>
+
+								<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt-child1 flex-col-l ">
+										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+											Esprit Ruffle Shirt
+										</a>
+
+										<span class="stext-105 cl3">
+											$16.64
+										</span>
+									</div>
+
+									<div class="block2-txt-child2 flex-r p-t-3">
+										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
+												alt="ICON">
+											<img class="icon-heart2 dis-block trans-04 ab-t-l"
+												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item active mr-2">
+						<div class="p-b-30 m-lr-auto">
+
+							<div class="block2">
+								<div class="block2-pic hov-img0 recom-size">
+									<div class="image-wrapper" >
+										<img class="d-block w-100" src="frontend/images/product-03.jpg" alt="IMG-PRODUCT">
+									</div>
+
+									<a href="#"
+										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+										Lihat
+									</a>
+								</div>
+
+								<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt-child1 flex-col-l ">
+										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+											Esprit Ruffle Shirt
+										</a>
+
+										<span class="stext-105 cl3">
+											$16.64
+										</span>
+									</div>
+
+									<div class="block2-txt-child2 flex-r p-t-3">
+										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
+												alt="ICON">
+											<img class="icon-heart2 dis-block trans-04 ab-t-l"
+												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item active mr-2">
+						<div class="p-b-30 m-lr-auto">
+
+							<div class="block2">
+								<div class="block2-pic hov-img0 recom-size">
+									<div class="image-wrapper" >
+										<img class="d-block w-100" src="frontend/images/product-04.jpg" alt="IMG-PRODUCT">
+									</div>
+
+									<a href="#"
+										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+										Lihat
+									</a>
+								</div>
+
+								<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt-child1 flex-col-l ">
+										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+											Esprit Ruffle Shirt
+										</a>
+
+										<span class="stext-105 cl3">
+											$16.64
+										</span>
+									</div>
+
+									<div class="block2-txt-child2 flex-r p-t-3">
+										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
+												alt="ICON">
+											<img class="icon-heart2 dis-block trans-04 ab-t-l"
+												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item active mr-2">
+						<div class="p-b-30 m-lr-auto">
+
+							<div class="block2">
+								<div class="block2-pic hov-img0">
+									<div class="image-wrapper" >
+										<img class="d-block w-100" src="frontend/images/product-05.jpg" alt="IMG-PRODUCT">
+									</div>
+
+									<a href="#"
+										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+										Lihat
+									</a>
+								</div>
+
+								<div class="block2-txt flex-w flex-t p-t-14">
+									<div class="block2-txt-child1 flex-col-l ">
+										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+											Esprit Ruffle Shirt
+										</a>
+
+										<span class="stext-105 cl3">
+											$16.64
+										</span>
+									</div>
+
+									<div class="block2-txt-child2 flex-r p-t-3">
+										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
+												alt="ICON">
+											<img class="icon-heart2 dis-block trans-04 ab-t-l"
+												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
+					data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
+					data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</button>
+			</div>
+		</div>
+	</div>
 
 
-    <!-- Property List Start -->
-    <div class="container-xxl py-5" id="kuliner">
-        <div class="container">
-            <div class="row g-0 gx-5 align-items-end">
-                <div class="col-lg-6">
-                    <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                        <h1 class="mb-3">Mana nih tempat yang kamu suka?</h1>
-                        <p>Yuk, dicek tempat makan populer, favoritnya foodies lokal, dan penawaran terbaik kami ada disini!
-                        </p>
-                    </div>
-                </div>
+	<!-- Product -->
+	<section class="bg0 p-t-23 p-b-140">
+		<div class="container">
+			<div class="p-b-10">
+				<h3 class="ltext-103 cl5">
+					Mebel Lainnya
+				</h3>
+			</div>
 
-            </div>
-            <div class="tab-content">
-                <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <div class="row g-4">
+			<div class="flex-w flex-sb-m p-b-52">
+				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+						Semua
+					</button>
 
-                        @forelse ($items->take(6) as $item)
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <a href="{{ route('kuliner-detail', $item->id) }}">
-                                    <div class="property-item rounded overflow-hidden">
-                                        <div class="position-relative overflow-hidden">
-                                            <img class="img-fluid" src="{{ Storage::url($item->image) }}" alt="">
-                                            <div
-                                                class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                                {{ $item->status }}</div>
-                                            <div
-                                                class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
-                                                <span class="fa fa-star" style="color: orange;"></span> 4.5</div>
-                                        </div>
-                                        <div class="p-4 pb-0">
-                                            <a class="d-block h5 mb-2">{{ $item->name }}</a>
-                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>{{ $item->address }}
-                                            </p>
-                                        </div>
-                                        <div class="d-flex border-top">
-                                            <small class="flex-fill text-center border-end py-2"><i
-                                                    class="fa fa-table text-primary me-2"></i>{{ $item->table }}
-                                                Meja</small>
-                                            <small class="flex-fill text-center border-end py-2"><i
-                                                    class="fa fa-home text-primary me-2"></i>{{ $item->room }}
-                                                Ruangan</small>
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".kursi">
+						Kursi
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".meja">
+						Meja
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
+						Lainnya
+					</button>
+
+
+				</div>
+
+				<div class="flex-w flex-c-m m-tb-10">
+					<div
+						class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
+						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
+						<i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+						Filter
+					</div>
+
+
+				</div>
+
+				<!-- Search product -->
+				<div class="dis-none panel-search w-full p-t-10 p-b-15">
+					<div class="bor8 dis-flex p-l-15">
+						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
+							<i class="zmdi zmdi-search"></i>
+						</button>
+
+						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product"
+							placeholder="Search">
+					</div>
+				</div>
+
+				<!-- Filter -->
+				<div class="dis-none panel-filter w-full p-t-10">
+					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
+						<div class="filter-col1 p-r-15 p-b-27">
+							<div class="mtext-102 cl2 p-b-15">
+								Sortir
+							</div>
+
+							<ul>
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Default
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Average rating
+									</a>
+								</li>
+
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Price: Low to High
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Price: High to Low
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="filter-col2 p-r-15 p-b-27">
+							<div class="mtext-102 cl2 p-b-15">
+								Harga
+							</div>
+
+							<ul>
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
+										All
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$0.00 - $50.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$50.00 - $100.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$100.00 - $150.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$150.00 - $200.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$200.00+
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row isotope-grid">
+				@forelse ($products as $product)
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item kursi">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0 product-size">
+							<div class="image-wrapper" >
+								<img style="object-fit: cover;" class="d-block w-100 h-100 img-fluid" src="{{Storage::url($product->image)}}" alt="IMG-PRODUCT">
+							</div>
+
+							<a href="#" data-item="{{ $product }}"
+								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Lihat
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									{{$product->name}}
+								</a>
+
+								<span class="stext-105 cl3">
+									{{"Rp " . number_format($product->price,0,',','.')}}
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
+										alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l"
+										src="frontend/images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                {{-- Modal --}}
+                <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+                    <div class="overlay-modal1 js-hide-modal1"></div>
+
+                    <div class="container">
+                        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+                            <button class="how-pos3 hov3 trans-04 js-hide-modal1">
+                                <img src="{{url('frontend/images/icons/icon-close.png')}}" alt="CLOSE">
+                            </button>
+
+                            <div class="row">
+                                <div class="col-md-6 col-lg-7 p-b-30">
+                                    <div class="p-l-25 p-r-30 p-lr-0-lg">
+                                        <div class="wrap-slick3 flex-sb flex-w">
+                                            <div class="wrap-slick3-dots"></div>
+                                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+                                            <div class="slick3 gallery-lb">
+                                                <div class="item-slick3" id="thumb-img" data-thumb="{{Storage::url($product->image)}}">
+                                                    <div class="wrap-pic-w pos-relative">
+                                                        <div  style="height: 40em; width: 100%;" >
+                                                            <img style="object-fit: cover;" class="modal-img d-block w-100 h-100 img-fluid" alt="IMG-PRODUCT">
+                                                        </div>
+
+                                                        <a class="img-zoom flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                                                            >
+                                                            <i class="fa fa-expand"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                        @empty
-                            <div class="text-lg-center">
-                                <h5>Tidak ada tempat makan</h5>
-                            </div>
-                        @endforelse
-                        <div class="col-12 d-flex justify-content-center text-center mt-lg-3 wow fadeInUp"
-                            data-wow-delay="0.1s">
-                            <a class="btn btn-primary py-3 px-5" href="{{ route('kuliner') }}">Tampilkan tempat
-                                lainnya</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Property List End -->
+                                </div>
 
+                                <div class="col-md-6 col-lg-5 p-b-30">
+                                    <div class="p-r-50 p-t-5 p-lr-0-lg">
+                                        <h4 class="text-105 cl2 js-name-detail p-b-14">
+                                            {{$product->name}}
+                                        </h4>
 
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">Testimoni</h1>
-                <p>Beberapa testimoni bagi yang sudah menggunakan layanan kami.</p>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item bg-light rounded p-3">
-                    <div class="bg-white border rounded p-4">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam
-                            stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="frontend/img/testimonial-1.jpg"
-                                style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
+                                        <span class="mtext-106 cl2">
+                                            {{"Rp " . number_format($product->price,0,',','.')}}
+                                        </span>
+
+                                        <p class="stext-102 cl3 p-t-23">
+                                            {{$product->desc}}
+                                        </p>
+
+                                        <!--  -->
+                                        <div class="p-t-33">
+                                            <div class="flex-w flex-r-m p-b-10">
+                                                <div class="size-204 flex-w flex-m respon6-next">
+                                                    <div class="wrap-num-product flex-w m-r-20 m-tb-10">
+                                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                            <i class="fs-16 zmdi zmdi-minus"></i>
+                                                        </div>
+
+                                                        <input class="mtext-104 cl3 txt-center num-product" type="number"
+                                                            name="num-product" value="1">
+
+                                                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                                            <i class="fs-16 zmdi zmdi-plus"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <button
+                                                        class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                                        Tambah keranjang
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--  -->
+                                        <div class="flex-w flex-m p-l-100 p-t-40 respon7">
+                                            <div class="flex-m bor9 p-r-10 m-r-11">
+                                                <a href="#"
+                                                    class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100"
+                                                    data-tooltip="Add to Wishlist">
+                                                    <i class="zmdi zmdi-favorite"></i>
+                                                </a>
+                                            </div>
+
+                                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                                                data-tooltip="Facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+
+                                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                                                data-tooltip="Twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+
+                                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+                                                data-tooltip="Google Plus">
+                                                <i class="fa fa-google-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-item bg-light rounded p-3">
-                    <div class="bg-white border rounded p-4">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam
-                            stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="frontend/img/testimonial-2.jpg"
-                                style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
+                @empty
+                <div class="text-center">
+                    <p>Tidak ada data</p>
                 </div>
-                <div class="testimonial-item bg-light rounded p-3">
-                    <div class="bg-white border rounded p-4">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam
-                            stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="frontend/img/testimonial-3.jpg"
-                                style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
+                @endforelse
+
+			</div>
+
+			<!-- Load more -->
+			<div class="flex-c-m flex-w w-full p-t-45">
+				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+					Lainnya
+				</a>
+			</div>
+		</div>
+	</section>
 @endsection

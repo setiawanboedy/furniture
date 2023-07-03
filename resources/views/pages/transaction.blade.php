@@ -15,9 +15,8 @@
                         <ul
                             class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between">
                             <li class="nav-item">
-                                <div class="h1">{{$item->booking_number->nomer}}</div>
+                                <div class="h1">{{$item->booking_number}}</div>
                             </li>
-
                             <li
                                 class="nav-item ms-lg-4 mt-2">
                                 <p>Tanggal {{$item->date}}, jam {{$item->time}}</p>

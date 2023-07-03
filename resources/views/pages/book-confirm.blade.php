@@ -1,10 +1,10 @@
 @extends('layouts.book')
-@section('title', 'Makan - Pemesanan')
+@section('title', 'Nisa Mebel - Pemesanan')
 @section('content')
     <div class="container header bg-white pt-lg-5">
         <div class="row g-0 flex-column-reverse flex-md-row">
             <div class="col-md-0 pt-5 mt-lg-5">
-                <h3 class="animated fadeIn">{{ $item->kuliner_place->name }}</h3>
+                <h3 class="animated fadeIn">{{ $item->product_place->name }}</h3>
             </div>
         </div>
     </div>

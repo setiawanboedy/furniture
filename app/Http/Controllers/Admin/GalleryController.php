@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\GalleryRequest;
 use Illuminate\Http\Request;
-use App\Models\BookingNumber;
-use App\Models\KulinerPlace;
-use App\Http\Requests\Admin\BookingNumberRequest;
+use App\Models\Gallery;
+use App\Models\Product;
+use Illuminate\Support\Str;
 
-class BookingNumberController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +18,10 @@ class BookingNumberController extends Controller
      */
     public function index()
     {
-        $items = BookingNumber::with(['kuliner_place'])->get();
-        return view('pages.admin.booking-number.index',[
-            'items'=> $items
+        $items = Gallery::with(['product'])->get();
+
+        return view('pages.admin.gallery.index',[
+            'items'=>$items
         ]);
     }
 
@@ -30,10 +32,9 @@ class BookingNumberController extends Controller
      */
     public function create()
     {
-        $kuliner_places = KulinerPlace::all();
-
-        return view('pages.admin.booking-number.create',[
-            'kuliner_places'=> $kuliner_places
+        $products = Product::all();
+        return view('pages.admin.gallery.create', [
+            'products'=>$products
         ]);
     }
 
@@ -43,12 +44,15 @@ class BookingNumberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BookingNumberRequest $request)
+    public function store(GalleryRequest $request)
     {
         $data = $request->all();
-        BookingNumber::create($data);
+        $data['image'] = $request->file('image')->store(
+            'assets/gallery', 'public'
+        );
+        Gallery::create($data);
 
-        return redirect()->route('booking-number.index');
+        return redirect()->route('gallery.index');
     }
 
     /**
@@ -70,9 +74,12 @@ class BookingNumberController extends Controller
      */
     public function edit($id)
     {
-        $item = BookingNumber::with(['kuliner_place'])->findOrFail($id);
-        return view('pages.admin.booking-number.edit',[
-            'item'=>$item
+        $item = Gallery::findOrFail($id);
+        $products = Product::all();
+
+        return view('pages.admin.gallery.edit',[
+            'item'=>$item,
+            'product'=>$products
         ]);
     }
 
@@ -83,15 +90,18 @@ class BookingNumberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BookingNumberRequest $request, $id)
+    public function update(GalleryRequest $request, $id)
     {
         $data = $request->all();
+        $data['image'] = $request->file('image')->store(
+            'assets/gallery', 'public'
+        );
 
-        $item = BookingNumber::findOrFail($id);
+        $item = Gallery::findOrFail($id);
 
         $item->update($data);
 
-        return redirect()->route('booking-number.index');
+        return redirect()->route('gallery.index');
     }
 
     /**
@@ -102,8 +112,8 @@ class BookingNumberController extends Controller
      */
     public function destroy($id)
     {
-        $item = BookingNumber::findOrFail($id);
+        $item = Gallery::findOrFail($id);
         $item -> delete();
-        return redirect()->route('booking-number.index');
+        return redirect()->route('gallery.index');
     }
 }

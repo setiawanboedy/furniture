@@ -11,7 +11,7 @@ class TransactionUserController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $transactions = Transaction::where('users_id', $user->id)->with(['booking_number'])->get();
+        $transactions = Transaction::where('users_id', $user->id)->get();
         return view('pages.transaction',[
             'transactions'=>$transactions
         ]);

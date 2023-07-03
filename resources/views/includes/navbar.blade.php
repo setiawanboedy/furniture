@@ -1,49 +1,130 @@
-<!-- Navbar Start -->
-<div class="navbar navbar-expand-lg nav-bar sticky-top bg-white">
-    <nav class="container bg-white navbar-light py-0 px-4">
-        <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center text-center">
-            <div class="icon p-2 me-2">
-                <img class="img-fluid" src="{{ url('frontend/img/icon-deal.png') }}" alt="Icon"
-                    style="width: 30px; height: 30px;">
-            </div>
-            <h1 class="m-0 text-primary">Makan</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <nav class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ms-auto">
-                <li>
-                    <a href="{{ route('home') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Beranda</a>
-                </li>
-                <li>
-                    <a href="{{ route('kuliner') }}" class="nav-item nav-link {{ request()->is('kuliner') ? 'active' : '' }}">Kuliner</a>
-                </li>
+<header>
+    <!-- Header desktop -->
+    <div class="container-menu-desktop">
+        <div class="wrap-menu-desktop">
+            <nav class="limiter-menu-desktop container">
 
-            </ul>
-            @guest
-                <a href="{{ route('auth') }}" class="btn btn-primary px-3 d-none d-lg-flex">MASUK</a>
-            @endguest
-            @auth
-                <div class="nav-item dropdown user-area">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                        {{-- https://ui-avatars.com/api/?name={{ $detail->username }} --}}
-                        <img class="user-avatar rounded-circle img-thumbnail" src="https://ui-avatars.com/api/?name={{ $user->name }}"
-                            alt="User Avatar">
-                    </a>
-                    <div class="user-menu dropdown-menu rounded-3 m-0">
-                        <a class="nav-link" href="{{ route('transaction-user') }}"><i class="fa fa- user"></i>Pemesanan</a>
-                        <a class="nav-link" href="{{ route('profile') }}"><i class="fa fa- user"></i>Profil</a>
-                        <form action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <button type="submit" class="nav-link btn btn-logout" href="{{ route('logout') }}"><i
-                                    class="fa fa-power -off"></i>Logout</button>
-                        </form>
-                    </div>
+                <!-- Logo desktop -->
+                <a href="#" class="logo">
+                    <img src="frontend/logo/logo.png" alt="IMG-LOGO">
+                </a>
+
+                <!-- Menu desktop -->
+                <div class="menu-desktop">
+                    <ul class="main-menu">
+                        <li class="active-menu">
+                            <a href="index.html">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="product.html">Belanja</a>
+                        </li>
+                        <li>
+                            <a href="about.html">Tentang</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">Kontak</a>
+                        </li>
+                    </ul>
                 </div>
 
-            @endauth
-        </nav>
-    </nav>
-</div>
-<!-- Navbar End -->
+                <!-- Icon header -->
+                <div class="wrap-icon-header flex-w flex-r-m">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </div>
+
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                        data-notify="2">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </div>
+
+                    <a href="#"
+                        class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+                        data-notify="0">
+                        <i class="zmdi zmdi-favorite-outline"></i>
+                    </a>
+
+                    <li class="nav-item px-3 px-xl-4">
+                        <button class="btn btn-outline-dark order-1 order-lg-0 fw-medium"
+                            role="button" type="button" onclick="event.preventDefault(); location.href='{{ url('login') }}';">Masuk</button>
+                    </li>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Header Mobile -->
+    <div class="wrap-header-mobile">
+        <!-- Logo moblie -->
+        <div class="logo-mobile">
+            <a href="index.html"><img src="frontend/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+        </div>
+
+        <!-- Icon header -->
+        <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                <i class="zmdi zmdi-search"></i>
+            </div>
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
+                data-notify="2">
+                <i class="zmdi zmdi-shopping-cart"></i>
+            </div>
+
+            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+                data-notify="0">
+                <i class="zmdi zmdi-favorite-outline"></i>
+            </a>
+        </div>
+
+        <!-- Button show menu -->
+        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </div>
+    </div>
+
+
+    <!-- Menu Mobile -->
+    <div class="menu-mobile">
+        <ul class="main-menu-m">
+            <li>
+                <a href="index.html">Beranda</a>
+
+                <span class="arrow-main-menu-m">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
+            </li>
+
+            <li>
+                <a href="product.html">Belanja</a>
+            </li>
+            <li>
+                <a href="about.html">Tentang</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Kontak</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal Search -->
+    <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+        <div class="container-search-header">
+            <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                <img src="frontend/images/icons/icon-close2.png" alt="CLOSE">
+            </button>
+
+            <form class="wrap-search-header flex-w p-l-15">
+                <button class="flex-c-m trans-04">
+                    <i class="zmdi zmdi-search"></i>
+                </button>
+                <input class="plh3" type="text" name="search" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</header>

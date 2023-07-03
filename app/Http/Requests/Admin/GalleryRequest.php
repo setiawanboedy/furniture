@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class KulinerRequest extends FormRequest
+class GalleryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,8 @@ class KulinerRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|max:255',
-            'status'=>'max:255',
-            'image'=>'required|image',
-            'address'=>'required|max:255',
-            'table'=>'required|integer',
-            'room'=>'required|integer'
+            'product_id' => 'required|integer|exists:products,id',
+            'image' => 'required|image'
         ];
     }
 }

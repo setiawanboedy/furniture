@@ -18,7 +18,7 @@
             <div style="width: 100%; bottom: 0; display: block;">
 
                 <div class="modal-content container d-grid">
-                    <a href="{{route('kuliner')}}" class="btn btn-success text-white" data-dismiss="modal">OK</a>
+                    <a href="{{route('product')}}" class="btn btn-success text-white" data-dismiss="modal">OK</a>
                 </div>
             </div>
         </div>

@@ -5,22 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KulinerPlace extends Model
+class Product extends Model
 {
     use HasFactory;
     protected $fillable = [
         'name',
-        'status',
+        'slug',
         'image',
-        'avgprice',
-        'address',
-        'table',
-        'room',
+        'price',
+        'desc',
     ];
 
     protected $hidden = [];
 
-    public function booking_numbers(){
-        return $this->hasMany(BookingNumber::class, 'booking_numbers_id', 'id');
+    public function product_galleries(){
+        return $this->hasMany(Gallery::class, 'product_id', 'id');
     }
 }

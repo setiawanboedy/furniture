@@ -15,7 +15,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $items = Transaction::with(['user','booking_number','kuliner_place'])->get();
+        $items = Transaction::with(['user'])->get();
 
         return view('pages.admin.transaction.index',[
             'items'=>$items
@@ -40,6 +40,7 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
         Transaction::create($data);
 
         return redirect()->route('transaction.index');

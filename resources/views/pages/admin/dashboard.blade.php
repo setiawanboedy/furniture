@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin - Makan')
+@section('title', 'Admin - Nisa Mebel')
 
 @section('content')
     <!-- Begin Page Content -->
@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text">{{$kuliner_count}}</span></div>
+                                        <div class="stat-text">{{$product_count}}</span></div>
                                         <div class="stat-heading">Restoran</div>
                                     </div>
                                 </div>

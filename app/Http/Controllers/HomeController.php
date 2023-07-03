@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\KulinerPlace;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $items = KulinerPlace::get();
-        
+        $products = Product::with(['product_galleries'])->get();
+        // dd($products[0]->product_galleries);
         return view('pages.home',[
-            'items'=>$items
+            'products'=>$products
         ]);
     }
 }

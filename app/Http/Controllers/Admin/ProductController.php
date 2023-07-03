@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\KulinerPlace;
-use App\Http\Requests\Admin\KulinerRequest;
+use App\Models\Product;
+use App\Http\Requests\Admin\ProductRequest;
+use Illuminate\Support\Str;
 
-class KulinerPlaceController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class KulinerPlaceController extends Controller
      */
     public function index()
     {
-        $items = KulinerPlace::get();
-        return view('pages.admin.kuliner.index', [
+        $items = Product::get();
+        return view('pages.admin.product.index', [
             'items'=>$items
         ]);
     }
@@ -29,7 +30,7 @@ class KulinerPlaceController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.kuliner.create');
+        return view('pages.admin.product.create');
     }
 
     /**
@@ -38,16 +39,17 @@ class KulinerPlaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(KulinerRequest $request)
+    public function store(ProductRequest $request)
     {
         $data = $request->all();
         $data['image'] = $request->file('image')->store(
             'assets/gallery', 'public'
         );
-        // $data['slug'] = str::slug($request->title);
-        KulinerPlace::create($data);
+        $ran = Str::random(5);
+        $data['slug'] = str::slug($request->title).'-'.$ran;
+        Product::create($data);
 
-        return redirect()->route('kuliner-place.index');
+        return redirect()->route('product.index');
     }
 
     /**
@@ -69,8 +71,8 @@ class KulinerPlaceController extends Controller
      */
     public function edit($id)
     {
-        $item = KulinerPlace::findOrFail($id);
-        return view('pages.admin.kuliner.edit',[
+        $item = Product::findOrFail($id);
+        return view('pages.admin.product.edit',[
             'item'=>$item
         ]);
     }
@@ -82,7 +84,7 @@ class KulinerPlaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         $data = $request->all();
 
@@ -91,11 +93,11 @@ class KulinerPlaceController extends Controller
         );
 
 
-        $item = KulinerPlace::findOrFail($id);
+        $item = Product::findOrFail($id);
 
         $item->update($data);
 
-        return redirect()->route('kuliner-place.index');
+        return redirect()->route('product.index');
     }
 
     /**
@@ -106,8 +108,8 @@ class KulinerPlaceController extends Controller
      */
     public function destroy($id)
     {
-        $item = KulinerPlace::findOrFail($id);
-        $item -> delete();
-        return redirect()->route('kuliner-place.index');
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect()->route('product.index');
     }
 }

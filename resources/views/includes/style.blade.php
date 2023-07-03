@@ -1,13 +1,29 @@
-<!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<!-- Libraries Stylesheet -->
-<link href="{{url('frontend/lib/animate/animate.min.css')}}" rel="stylesheet">
-<link href="{{url('frontend/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-
-<!-- Customized Bootstrap Stylesheet -->
-<link href="{{url('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
-
-<!-- Template Stylesheet -->
-<link href="{{url('frontend/css/style.css')}}" rel="stylesheet">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/fonts/iconic/css/material-design-iconic-font.min.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/fonts/linearicons-v1.0.0/icon-font.min.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/animate/animate.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/animsition/css/animsition.min.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/daterangepicker/daterangepicker.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/slick/slick.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/MagnificPopup/magnific-popup.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{url('frontend/css/util.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('frontend/css/main.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('frontend/css/style.css')}}">
+<!--===============================================================================================-->

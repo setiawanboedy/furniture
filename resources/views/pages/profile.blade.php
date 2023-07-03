@@ -1,7 +1,7 @@
 @extends('layouts.detail')
 
 @section('title')
-    Makan - Profile
+Nisa Mebel - Profile
 @endsection
 
 @section('content')

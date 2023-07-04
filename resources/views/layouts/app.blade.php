@@ -17,9 +17,6 @@
 	<!-- Header -->
     @include('includes.navbar')
 
-	<!-- Cart -->
-	@include('includes.cart')
-
     @yield('content')
 
 

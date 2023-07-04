@@ -25,7 +25,7 @@
 							</div>
 
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html"
+								<a href="{{route('product-front')}}"
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Belanja
 								</a>
@@ -51,7 +51,7 @@
 							</div>
 
 							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-								<a href="product.html"
+								<a href="{{route('product-front')}}"
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Belanja
 								</a>
@@ -74,195 +74,47 @@
 
 			<div id="carouselExampleControls" class="carousel" data-ride="carousel">
 				<div class="carousel-inner">
-					<div class="carousel-item active mr-2">
+                    @foreach ($products as $product)
+                    <div class="carousel-item active mr-2">
 						<div class="p-b-30 m-lr-auto">
 							<div class="block2">
 								<div class="block2-pic hov-img0 recom-size">
 									<div class="image-wrapper" >
-										<img class="d-block w-100 img-fluid" src="https://www.nicepng.com/png/full/24-248700_sofa-free-png-image-furniture-photos-transparent-background.png" alt="IMG-PRODUCT">
+										<img class="d-block w-100 img-fluid" src="{{Storage::url($product->image)}}" alt="IMG-PRODUCT">
 									</div>
 
-									<a href="#"
-										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-										Lihat
-									</a>
+									<a href="{{route('detail', $product->slug)}}"
+                                        class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+                                        Lihat
+                                    </a>
 								</div>
 
 								<div class="block2-txt flex-w flex-t p-t-14">
 									<div class="block2-txt-child1 flex-col-l ">
 										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-											Esprit Ruffle Shirt
+											{{$product->name}}
 										</a>
 
 										<span class="stext-105 cl3">
-											$16.64
+											{{"Rp " . number_format($product->price,0,',','.')}}
 										</span>
 									</div>
 
 									<div class="block2-txt-child2 flex-r p-t-3">
 										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
+											<img class="icon-heart1 dis-block trans-04" src="{{url('frontend/images/icons/icon-heart-01.png')}}"
 												alt="ICON">
 											<img class="icon-heart2 dis-block trans-04 ab-t-l"
-												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
+												src="{{url('frontend/images/icons/icon-heart-02.png')}}" alt="ICON">
 										</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="carousel-item active mr-2">
-						<div class="p-b-30 m-lr-auto">
+                    @endforeach
 
-							<div class="block2" >
-								<div class="block2-pic hov-img0 recom-size">
-									<div class="image-wrapper" >
-										<img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_P-VYCZwqxnL6QIye0AfAL9ddnY5NzTYiANEKaCLutz1ti3FRq36pRSsCbVtl8jK6AA&usqp=CAU" alt="IMG-PRODUCT">
-									</div>
 
-									<a href="#"
-										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-										Lihat
-									</a>
-								</div>
-
-								<div class="block2-txt flex-w flex-t p-t-14">
-									<div class="block2-txt-child1 flex-col-l ">
-										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-											Esprit Ruffle Shirt
-										</a>
-
-										<span class="stext-105 cl3">
-											$16.64
-										</span>
-									</div>
-
-									<div class="block2-txt-child2 flex-r p-t-3">
-										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
-												alt="ICON">
-											<img class="icon-heart2 dis-block trans-04 ab-t-l"
-												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="carousel-item active mr-2">
-						<div class="p-b-30 m-lr-auto">
-
-							<div class="block2">
-								<div class="block2-pic hov-img0 recom-size">
-									<div class="image-wrapper" >
-										<img class="d-block w-100" src="frontend/images/product-03.jpg" alt="IMG-PRODUCT">
-									</div>
-
-									<a href="#"
-										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-										Lihat
-									</a>
-								</div>
-
-								<div class="block2-txt flex-w flex-t p-t-14">
-									<div class="block2-txt-child1 flex-col-l ">
-										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-											Esprit Ruffle Shirt
-										</a>
-
-										<span class="stext-105 cl3">
-											$16.64
-										</span>
-									</div>
-
-									<div class="block2-txt-child2 flex-r p-t-3">
-										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
-												alt="ICON">
-											<img class="icon-heart2 dis-block trans-04 ab-t-l"
-												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="carousel-item active mr-2">
-						<div class="p-b-30 m-lr-auto">
-
-							<div class="block2">
-								<div class="block2-pic hov-img0 recom-size">
-									<div class="image-wrapper" >
-										<img class="d-block w-100" src="frontend/images/product-04.jpg" alt="IMG-PRODUCT">
-									</div>
-
-									<a href="#"
-										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-										Lihat
-									</a>
-								</div>
-
-								<div class="block2-txt flex-w flex-t p-t-14">
-									<div class="block2-txt-child1 flex-col-l ">
-										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-											Esprit Ruffle Shirt
-										</a>
-
-										<span class="stext-105 cl3">
-											$16.64
-										</span>
-									</div>
-
-									<div class="block2-txt-child2 flex-r p-t-3">
-										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
-												alt="ICON">
-											<img class="icon-heart2 dis-block trans-04 ab-t-l"
-												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="carousel-item active mr-2">
-						<div class="p-b-30 m-lr-auto">
-
-							<div class="block2">
-								<div class="block2-pic hov-img0">
-									<div class="image-wrapper" >
-										<img class="d-block w-100" src="frontend/images/product-05.jpg" alt="IMG-PRODUCT">
-									</div>
-
-									<a href="#"
-										class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-										Lihat
-									</a>
-								</div>
-
-								<div class="block2-txt flex-w flex-t p-t-14">
-									<div class="block2-txt-child1 flex-col-l ">
-										<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-											Esprit Ruffle Shirt
-										</a>
-
-										<span class="stext-105 cl3">
-											$16.64
-										</span>
-									</div>
-
-									<div class="block2-txt-child2 flex-r p-t-3">
-										<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-											<img class="icon-heart1 dis-block trans-04" src="frontend/images/icons/icon-heart-01.png"
-												alt="ICON">
-											<img class="icon-heart2 dis-block trans-04 ab-t-l"
-												src="frontend/images/icons/icon-heart-02.png" alt="ICON">
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 				<button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
 					data-slide="prev">
@@ -318,18 +170,6 @@
 					</div>
 
 
-				</div>
-
-				<!-- Search product -->
-				<div class="dis-none panel-search w-full p-t-10 p-b-15">
-					<div class="bor8 dis-flex p-l-15">
-						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-							<i class="zmdi zmdi-search"></i>
-						</button>
-
-						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product"
-							placeholder="Search">
-					</div>
 				</div>
 
 				<!-- Filter -->

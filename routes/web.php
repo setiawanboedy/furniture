@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +21,17 @@ Route::namespace('App\Http\Controllers')
 
 });
 
+Route::namespace('App\Http\Controllers')
+    ->middleware(['auth','web'])
+    ->controller(CartController::class)
+    ->group(function(){
+        Route::get('cart', 'cartList')->name('cart.list');
+        Route::post('cart', 'addToCart')->name('cart.store');
+        Route::post('update-cart','updateCart')->name('cart.update');
+        Route::delete('remove/{id}','removeCart')->name('cart.remove');
+        Route::post('clear', 'clearAllCart')->name('cart.clear');
+    });
+
 // Route::namespace('App\Http\Controllers')
 //     ->middleware(['auth','web'])
 //     ->controller(TransactionUserController::class)
@@ -40,4 +50,3 @@ Route::prefix('admin')
     });
 
 Auth::routes();
-

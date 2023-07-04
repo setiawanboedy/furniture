@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Upload Bukti Pembayaran')
 @section('content')
-    <div class="h-25"></div>
+    <div style="min-height: 8em"></div>
     <div class="col text-center">
         <h4>Selangkah lagi nih!</h4>
         <h5>Barang ini akan menjadi milik Anda</h5>

@@ -1,52 +1,64 @@
-@extends('layouts.detail')
+@extends('layouts.app')
 @section('title', 'Makan - Pemesanan')
 
 @section('content')
+<div style="min-height: 8em"></div>
+    <div class="container " >
 
-<div class="mt-lg-5">
+        <div class="row" >
+            <div class="d-flex justify-content-center mb-50 mx-5">
 
-    @auth
-    @forelse ($transactions as $item)
-    <div class="card rounded-3 mb-2 container">
-        <div class="card-body p-2">
-            <nav class=" navbar-expand-lg">
-                <div class="container-fluid">
-                    <div class="navbar-collapse">
-                        <ul
-                            class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between">
-                            <li class="nav-item">
-                                <div class="h1">{{$item->booking_number}}</div>
-                            </li>
-                            <li
-                                class="nav-item ms-lg-4 mt-2">
-                                <p>Tanggal {{$item->date}}, jam {{$item->time}}</p>
-                            </li>
-                        </ul>
-                        @if ($item->transaction_status == "SUCCESS")
-                        <span
-                        class="btn-success rounded-3 py-1 px-3 " id="status">
-                            {{$item->transaction_status}}
-                        </span>
-                        @elseif ($item->transaction_status == "PENDING")
-                        <span
-                        class="btn-warning rounded-3 py-1 px-3 " id="status">
-                            {{$item->transaction_status}}
-                        </span>
-                        @else
-                        <span
-                        class="btn-danger rounded-3 py-1 px-3 " id="status">
-                            {{$item->transaction_status}}
-                        </span>
-                        @endif
+                <div class="card card-body mb-3">
+                    <div
+                        class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                        <div class="mr-2 mb-3 mb-lg-0">
+
+                            <img src="https://i.imgur.com/5Aqgz7o.jpg" width="150" height="150" alt="">
+
+                        </div>
+
+                        <div class="media-body">
+                            <h6 class="media-title font-weight-semibold">
+                                <a href="#" data-abc="true">Apple iPhone XR (Red, 128 GB)</a>
+                            </h6>
+
+                            <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
+                                <li class="list-inline-item"><a href="#" class="text-muted" data-abc="true">Phones</a>
+                                </li>
+                                <li class="list-inline-item"><a href="#" class="text-muted"
+                                        data-abc="true">Mobiles</a></li>
+                            </ul>
+
+                            <p class="mb-3">128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 7MP Front Camera
+                                A12 Bionic Chip Processor | Gorilla Glass with high quality display </p>
+
+                            <ul class="list-inline list-inline-dotted mb-0">
+                                <li class="list-inline-item">All items from <a href="#" data-abc="true">Mobile
+                                        point</a></li>
+                                <li class="list-inline-item">Add to <a href="#" data-abc="true">wishlist</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
+                            <h3 class="mb-0 font-weight-semibold">$459.99</h3>
+
+                            <div>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+
+                            </div>
+
+                            <div class="text-muted">1985 reviews</div>
+
+                            <button type="button" class="btn btn-warning mt-4 text-white"><i
+                                    class="icon-cart-add mr-2"></i> Add to cart</button>
+                        </div>
                     </div>
                 </div>
-            </nav>
+
+            </div>
         </div>
     </div>
-    @empty
-    <div class="container">Tidak ada histori pemesanan</div>
-    @endforelse
-    @endauth
-
-</div>
 @endsection

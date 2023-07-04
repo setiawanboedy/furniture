@@ -47,11 +47,11 @@
                             </div>
                         @endguest
                     </a>
-                    <a href="#"
+                    {{-- <a href="#"
                         class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
                         data-notify="0">
                         <i class="zmdi zmdi-favorite-outline"></i>
-                    </a>
+                    </a> --}}
 
                     @guest
                         <li class="nav-item px-3 px-xl-4">
@@ -60,13 +60,43 @@
                         </li>
                     @endguest
                     @auth
-                        <li class="nav-item px-3 px-xl-4">
-                            <form action="{{ url('logout') }}" method="post">
-                                @csrf
-                                <button class="btn btn-outline-dark order-1 order-lg-0 fw-medium"
-                                    role="button">Keluar</button>
-                            </form>
-                        </li>
+                        {{-- <div class="nav-item dropdown user-area">
+                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                <img class="user-avatar rounded-circle img-thumbnail"
+                                    src="https://ui-avatars.com/api/?name={{ $user->name }}" alt="User Avatar">
+                            </a>
+                            <div class="user-menu dropdown-menu rounded-3 m-0">
+                                <a class="nav-link" href="{{ route('user-trans.index') }}"><i
+                                        class="fa fa- user"></i>Pemesanan</a>
+                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Profil</a>
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="nav-link btn btn-logout" href="{{ route('logout') }}"><i
+                                            class="fa fa-power -off"></i>Logout</button>
+                                </form>
+                            </div>
+                        </div> --}}
+                        <ul class="main-menu">
+                            <li>
+                                <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                                    <img class="user-avatar rounded-circle img-thumbnail"
+                                        src="https://ui-avatars.com/api/?name={{ $user->name }}" alt="User Avatar">
+                                </a>
+                                    <ul class="sub-menu" style="margin-left: -60px; margin-top: -10px">
+                                        <li>
+                                            <a class="nav-link" href="{{ route('user-trans.index') }}"><i
+                                                class="fa fa- user"></i>Pemesanan</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Profil</a>
+                                        </li>
+                                        <li>
+                                            <button type="submit" class="nav-link btn btn-logout" href="{{ route('logout') }}"><i
+                                                class="fa fa-power -off"></i>Logout</button>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
                     @endauth
 
                 </div>

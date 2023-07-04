@@ -41,6 +41,14 @@ Route::namespace('App\Http\Controllers')
         Route::post('payment', 'upload')->name('payment.store');
     });
 
+Route::namespace('App\Http\Controllers')
+    ->middleware(['auth','web'])
+    ->controller(TransactionUserController::class)
+    ->group(function(){
+        Route::get('user/transactions', 'index')->name('user-trans.index');
+        // Route::post('payment', 'upload')->name('payment.store');
+});
+
 Route::prefix('admin')
     ->namespace('App\Http\Controllers\Admin')
     ->middleware(['auth','admin'])

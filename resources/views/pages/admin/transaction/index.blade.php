@@ -2,7 +2,7 @@
 @section('title','Admin - Transaksi')
 @section('content')
     <!-- Begin Page Content -->
-    <div class="content">
+    <div class="content"style="margin-left:-60px">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -16,9 +16,9 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nama Mebel</th>
                             <th>Pemesan</th>
                             <th>Tanggal</th>
+                            <th>Alamat</th>
                             <th>Total</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -28,15 +28,15 @@
                         @forelse ($items as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item-> product }}</td>
                                 <td>{{ $item->user->name }}</td>
                                 <td>{{$item->date}}</td>
-                                <td>Rp {{ $item->transaction_total }}</td>
+                                <td>{{ $item->address }}</td>
+                                <td>{{ 'Rp ' . number_format($item->transaction_total, 0, ',', '.') }}</td>
                                 <td>{{ $item->transaction_status }}</td>
                                 <td>
-                                    {{-- <a href="{{route('transaction.show', $item->id) }}" class="btn btn-primary">
+                                    <a href="{{route('transaction.show', $item->id) }}" class="btn btn-primary">
                                         <i class="fa fa-eye"></i>
-                                    </a> --}}
+                                    </a>
                                     <a href="{{route('transaction.edit', $item->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil"></i>
                                     </a>

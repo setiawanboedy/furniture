@@ -3,7 +3,7 @@
 
 @section('content')
     <!-- Begin Page Content -->
-    <div class="container-fluid content">
+    <div class="container-fluid content" style="margin-left:-60px">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">

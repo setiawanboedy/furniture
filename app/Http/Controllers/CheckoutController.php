@@ -8,19 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
-    public function index(Request $request, $id)
+    public function index(Request $request)
     {
-        return view('pages.book-confirm'
+        return view('pages.payment-confirm'
         );
     }
 
-    public function submit(Request $request, $id)
+    public function upload(Request $request, $id)
     {
-        
-
-
-        return view('pages.success');
-
-
+        // return view('pages.success');
     }
 }

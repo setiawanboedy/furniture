@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Begin Page Content -->
-    <div class="content">
+    <div class="content content-right" style="margin-left:-60px">
         <!-- Animated -->
         <div class="animated fadeIn">
             <!-- Widgets  -->

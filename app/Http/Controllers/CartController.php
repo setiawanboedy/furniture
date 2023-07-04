@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Transaction;
+use App\Models\TransactionDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class CartController extends Controller
 {
@@ -64,10 +67,33 @@ class CartController extends Controller
         return redirect()->route('cart.list');
     }
 
-    public function clearAllCart()
+    public function checkout(Request $request)
     {
-        Cart::clear();
-        // session()->flash('success', 'All Item Cart Clear Successfully !');
-        return redirect()->route('cart.list');
+        $data = $request->all();
+        $userId = Auth::user()->id;
+
+        $transaction = Transaction::create([
+            'users_id' => $userId,
+            'address' => $request->province.', '.$request->state.', '.$request->postcode,
+            'date' => Carbon::now(),
+            'transaction_total' => $request->transaction_total,
+            'transaction_status' => 'PENDING'
+        ]);
+
+        $carts = Cart::where('user_id', $userId)->get();
+        for ($i=0; $i < count($carts); $i++) {
+
+            // print_r($carts[$i]->name);
+            TransactionDetail::create([
+                'transaction_id'=> $transaction->id,
+                'image'=> $carts[$i]->image,
+                'name'=>$carts[$i]->name,
+                'price'=>$carts[$i]->price,
+                'quantity'=>$carts[$i]->quantity,
+                'total'=> $carts[$i]->total
+            ]);
+        }
+
+        return redirect()->route('payment.index');
     }
 }

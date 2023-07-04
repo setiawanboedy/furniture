@@ -30,14 +30,16 @@ Route::namespace('App\Http\Controllers')
         Route::post('update-cart','updateCart')->name('cart.update');
         Route::delete('remove/{id}','removeCart')->name('cart.remove');
         Route::post('clear', 'clearAllCart')->name('cart.clear');
+        Route::post('checkout', 'checkout')->name('cart.checkout');
     });
 
-// Route::namespace('App\Http\Controllers')
-//     ->middleware(['auth','web'])
-//     ->controller(TransactionUserController::class)
-//     ->group(function(){
-//         Route::get('/product/transactions', 'index')->name('transaction-user');
-//     });
+Route::namespace('App\Http\Controllers')
+    ->middleware(['auth','web'])
+    ->controller(CheckoutController::class)
+    ->group(function(){
+        Route::get('payment', 'index')->name('payment.index');
+        Route::post('payment', 'upload')->name('payment.store');
+    });
 
 Route::prefix('admin')
     ->namespace('App\Http\Controllers\Admin')

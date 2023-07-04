@@ -85,7 +85,6 @@
                                             <form action="{{ route('cart.remove', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
-                                                {{-- <input type="hidden" value="{{ $item->id }}" name="id"> --}}
 
                                                 <button
                                                     class="px-3 py-1 text-black bg-gray-800 shadow rounded-full how-itemcart1">x</button>
@@ -118,7 +117,8 @@
 
                         <div class="flex-w flex-t bor12 p-b-3">
                         </div>
-                        <form action="#" method="post">
+                        <form action="{{route('cart.checkout')}}" method="post">
+                            @csrf
                             <div class="flex-w flex-t bor12 p-t-15 p-b-30">
                                 <div class="size-208 w-full-ssm">
                                     <span class="stext-110 cl2">
@@ -145,7 +145,7 @@
 
                                         <div class="bor8 bg0 m-b-12">
                                             <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
-                                                placeholder="Kecamatan">
+                                                placeholder="Kecamatan" >
                                         </div>
 
                                         <div class="bor8 bg0 m-b-22">
@@ -170,7 +170,7 @@
                                     </span>
                                 </div>
                             </div>
-
+                            <input type="hidden" value="{{ $total }}" name="transaction_total">
                             <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
                                 Checkout
                             </button>

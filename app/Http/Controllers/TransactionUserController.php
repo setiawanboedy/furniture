@@ -10,10 +10,15 @@ class TransactionUserController extends Controller
 {
     public function index(Request $request)
     {
-        $user = Auth::user();
-        $transactions = Transaction::where('users_id', $user->id)->get();
+        $user_id = Auth::user()->id;
+        $transactionDetails = Transaction::where('users_id', $user_id)
+                                ->with('details')
+                                ->get()
+                                ->pluck('details')
+                                ->flatten();
+        
         return view('pages.transaction',[
-            'transactions'=>$transactions
+            'transactions'=>$transactionDetails
         ]);
     }
 }

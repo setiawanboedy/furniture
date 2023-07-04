@@ -15,7 +15,7 @@
 
 
         <div class="text-center">
-            <form action="#" method="POST">
+            <form action="{{route('review.store')}}" method="POST">
                 @csrf
                 <div class="d-flex justify-content-center">
                     <fieldset class="rating">
@@ -44,8 +44,8 @@
                 <div class="form-group d-flex justify-content-center">
                     <textarea name="comment" rows="6" class="d-block w50 form-control"></textarea>
                 </div>
-
-                <button type="submit" class="btn btn-home-page mt-3 px-5">Kirim</button>
+                <input type="hidden" name="product_id" value="{{$product_id}}">
+                <button class="btn btn-home-page mt-3 px-5">Kirim</button>
             </form>
         </div>
     </div>

@@ -21,4 +21,9 @@ class Product extends Model
     public function product_galleries(){
         return $this->hasMany(Gallery::class, 'product_id', 'id');
     }
+
+    public function ratings()
+    {
+        return $this->hasMany(ProductRating::class, 'product_id', 'id');
+    }
 }

@@ -46,7 +46,15 @@ Route::namespace('App\Http\Controllers')
     ->controller(TransactionUserController::class)
     ->group(function(){
         Route::get('user/transactions', 'index')->name('user-trans.index');
-        // Route::post('payment', 'upload')->name('payment.store');
+
+});
+
+Route::namespace('App\Http\Controllers')
+    ->middleware(['auth','web'])
+    ->controller(ReviewController::class)
+    ->group(function(){
+        Route::get('user/transactions/review/{product_id}', 'index')->name('review.index');
+        Route::post('user/transactions/review', 'review')->name('review.store');
 });
 
 Route::prefix('admin')

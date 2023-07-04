@@ -18,17 +18,17 @@ class CheckoutController extends Controller
 
     public function upload(Request $request)
     {
-        // $request->validate([
-        //     'prove'=> 'required|image'
-        // ]);
-        // $data = $request->all();
-        // $userId = Auth::user()->id;
-        // $trans = Transaction::findOrFail($request->trans_id);
-        // $trans->prove = $request->file('prove')->store(
-        //     'assets/prove', 'public'
-        // );
-        // $trans->save();
+        $request->validate([
+            'prove'=> 'required|image'
+        ]);
+        $data = $request->all();
+        $userId = Auth::user()->id;
+        $trans = Transaction::findOrFail($request->trans_id);
+        $trans->prove = $request->file('prove')->store(
+            'assets/prove', 'public'
+        );
+        $trans->save();
 
-        return view('pages.review');
+        return redirect()->route('user-trans.index');
     }
 }

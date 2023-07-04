@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\ProductRating;
 
 class User extends Authenticatable
 {
@@ -31,6 +32,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function ratings()
+    {
+        return $this->hasMany(ProductRating::class,'users_id','id');
+    }
 
     /**
      * The attributes that should be cast.

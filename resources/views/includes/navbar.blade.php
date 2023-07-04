@@ -60,41 +60,29 @@
                         </li>
                     @endguest
                     @auth
-                        {{-- <div class="nav-item dropdown user-area">
-                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                <img class="user-avatar rounded-circle img-thumbnail"
-                                    src="https://ui-avatars.com/api/?name={{ $user->name }}" alt="User Avatar">
-                            </a>
-                            <div class="user-menu dropdown-menu rounded-3 m-0">
-                                <a class="nav-link" href="{{ route('user-trans.index') }}"><i
-                                        class="fa fa- user"></i>Pemesanan</a>
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Profil</a>
-                                <form action="{{ route('logout') }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="nav-link btn btn-logout" href="{{ route('logout') }}"><i
-                                            class="fa fa-power -off"></i>Logout</button>
-                                </form>
-                            </div>
-                        </div> --}}
+
                         <ul class="main-menu">
                             <li>
                                 <a href="#" class="nav-link" data-bs-toggle="dropdown">
                                     <img class="user-avatar rounded-circle img-thumbnail"
                                         src="https://ui-avatars.com/api/?name={{ $user->name }}" alt="User Avatar">
                                 </a>
-                                    <ul class="sub-menu" style="margin-left: -60px; margin-top: -10px">
-                                        <li>
-                                            <a class="nav-link" href="{{ route('user-trans.index') }}"><i
-                                                class="fa fa- user"></i>Pemesanan</a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Profil</a>
-                                        </li>
-                                        <li>
-                                            <button type="submit" class="nav-link btn btn-logout" href="{{ route('logout') }}"><i
-                                                class="fa fa-power -off"></i>Logout</button>
-                                        </li>
-                                    </ul>
+                                <ul class="sub-menu" style="margin-left: -60px; margin-top: -10px">
+                                    <li>
+                                        <a class="nav-link" href="{{ route('user-trans.index') }}"><i
+                                                ></i>Transaksi</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#"><i ></i>Profil</a>
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                            <button class="nav-link"><i></i>Logout</button>
+                                        </form>
+
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     @endauth

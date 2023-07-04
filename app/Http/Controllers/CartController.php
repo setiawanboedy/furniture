@@ -90,6 +90,7 @@ class CartController extends Controller
 
             TransactionDetail::create([
                 'transaction_id'=> $transaction->id,
+                'product_id'=> $carts[$i]->product_id,
                 'image'=> $carts[$i]->image,
                 'name'=>$carts[$i]->name,
                 'price'=>$carts[$i]->price,

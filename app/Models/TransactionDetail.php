@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Transaction;
 
 class TransactionDetail extends Model
 {
@@ -11,6 +12,7 @@ class TransactionDetail extends Model
 
     protected $fillable = [
         'transaction_id',
+        'product_id',
         'image',
         'name',
         'price',
@@ -21,4 +23,9 @@ class TransactionDetail extends Model
     protected $hidden = [
 
     ];
+
+    public function transaction()
+    {
+        return $this->belongsTo(Transaction::class,'transaction_id', 'id');
+    }
 }

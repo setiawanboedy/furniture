@@ -20,6 +20,7 @@
                             <th>Tanggal</th>
                             <th>Alamat</th>
                             <th>Total</th>
+                            <th>Bukti</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -32,6 +33,14 @@
                                 <td>{{$item->date}}</td>
                                 <td>{{ $item->address }}</td>
                                 <td>{{ 'Rp ' . number_format($item->transaction_total, 0, ',', '.') }}</td>
+                                <td>
+                                    @if ($item->prove != null)
+                                    <img src="{{Storage::url($item->prove)}}" alt="" style="width: 80px; height:80px" class="img-thumbnail">
+                                    @else
+                                    Belum
+                                    @endif
+
+                                </td>
                                 <td>{{ $item->transaction_status }}</td>
                                 <td>
                                     <a href="{{route('transaction.show', $item->id) }}" class="btn btn-primary">

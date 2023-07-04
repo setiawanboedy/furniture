@@ -8,14 +8,27 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $trans_id)
     {
-        return view('pages.payment-confirm'
+        return view('pages.payment-confirm',[
+            'trans_id'=>$trans_id
+        ]
         );
     }
 
-    public function upload(Request $request, $id)
+    public function upload(Request $request)
     {
-        // return view('pages.success');
+        $request->validate([
+            'prove'=> 'required|image'
+        ]);
+        $data = $request->all();
+        $userId = Auth::user()->id;
+        $trans = Transaction::findOrFail($request->trans_id);
+        $trans->prove = $request->file('prove')->store(
+            'assets/prove', 'public'
+        );
+        $trans->save();
+
+        return redirect()->route('product-front');
     }
 }

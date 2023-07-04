@@ -19,6 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->string('address');
             $table->timestamp('date');
             $table->integer('transaction_total');
+            $table->string('prove')->nullable();
             $table->string('transaction_status');
             $table->timestamps();
         });

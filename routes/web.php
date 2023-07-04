@@ -37,7 +37,7 @@ Route::namespace('App\Http\Controllers')
     ->middleware(['auth','web'])
     ->controller(CheckoutController::class)
     ->group(function(){
-        Route::get('payment', 'index')->name('payment.index');
+        Route::get('payment/{trans_id}', 'index')->name('payment.index');
         Route::post('payment', 'upload')->name('payment.store');
     });
 

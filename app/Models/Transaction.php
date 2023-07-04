@@ -14,6 +14,7 @@ class Transaction extends Model
         'users_id',
         'date',
         'transaction_total',
+        'prove',
         'transaction_status'
        ];
 

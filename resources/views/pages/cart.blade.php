@@ -20,22 +20,22 @@
         </div>
     </div>
 
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
     <!-- Shoping Cart -->
     <div class="bg0 p-t-75 p-b-85">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+
                     <div class="m-l-25 m-r--38 m-lr-0-xl">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="wrap-table-shopping-cart">
 
                             <table class="table-shopping-cart">
@@ -136,9 +136,9 @@
 
                                         <div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
                                             <select class="js-select2" name="province">
-                                                <option>Provinsi</option>
-                                                <option>Nusa Tenggara Barat</option>
-                                                <option>Bima</option>
+                                                <option value="">Provinsi</option>
+                                                <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                                                <option value="Bima">Bima</option>
                                             </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -149,7 +149,7 @@
                                         </div>
 
                                         <div class="bor8 bg0 m-b-22">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text"
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number"
                                                 name="postcode" placeholder="Kode Pos">
                                         </div>
 

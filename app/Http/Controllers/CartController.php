@@ -69,6 +69,11 @@ class CartController extends Controller
 
     public function checkout(Request $request)
     {
+        $request->validate([
+            'province'=> 'required',
+            'state'=> 'required',
+            'postcode'=> 'required',
+        ]);
         $data = $request->all();
         $userId = Auth::user()->id;
 
@@ -83,7 +88,6 @@ class CartController extends Controller
         $carts = Cart::where('user_id', $userId)->get();
         for ($i=0; $i < count($carts); $i++) {
 
-            // print_r($carts[$i]->name);
             TransactionDetail::create([
                 'transaction_id'=> $transaction->id,
                 'image'=> $carts[$i]->image,
@@ -94,6 +98,6 @@ class CartController extends Controller
             ]);
         }
 
-        return redirect()->route('payment.index');
+        return redirect()->route('payment.index', $transaction->id);
     }
 }

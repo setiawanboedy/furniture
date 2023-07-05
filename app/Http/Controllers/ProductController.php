@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $products = Product::with(['ratings'])->get();
+        $products = Product::get();
 
         return view('pages.product',[
             'products'=>$products

@@ -15,7 +15,7 @@ class HomeController extends Controller
         $user = Auth::user();
         if ($user != null) {
             $recommendations = $recommendC->generateRecommendations($user->id,4);
-            // dd($recommendations);
+        
             return view('pages.home',[
                 'products'=>$products,
                 'recommendations'=>$recommendations

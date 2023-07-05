@@ -40,7 +40,7 @@
                         <td>{{ 'Rp ' . number_format($item->transaction_total, 0, ',', '.') }}</td>
                         <td>
                             @if ($item->prove != null)
-                                <img src="{{ public_path('storage/'.$item->prove) }}" alt="" style="width: 80px; height:80px"
+                                <img src="{{ public_path($item->prove) }}" alt="" style="width: 80px; height:80px"
                                     class="img-thumbnail">
                             @else
                                 Belum

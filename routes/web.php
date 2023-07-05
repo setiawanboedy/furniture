@@ -64,6 +64,8 @@ Route::prefix('admin')
         Route::get('/', 'DashboardController@index')->name('dashboard');
         Route::resource('product', ProductController::class);
         Route::resource('gallery', GalleryController::class);
+        Route::post('transaction/filter', 'TransactionController@filter')->name('filter-trans');
+        Route::post('transaction/pdf', 'TransactionController@pdf')->name('pdf-trans');
         Route::resource('transaction', TransactionController::class);
         Route::resource('suplier-admin', SuplierAdminController::class);
     });

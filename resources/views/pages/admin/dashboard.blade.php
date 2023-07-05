@@ -14,12 +14,12 @@
                         <div class="card-body">
                             <div class="stat-widget-five">
                                 <div class="stat-icon dib flat-color-1">
-                                    <i class="pe-7s-home"></i>
+                                    <i class="fa fa-bed"></i>
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text">{{$product_count}}</span></div>
-                                        <div class="stat-heading">Restoran</div>
+                                        <div class="stat-heading">Produk</div>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text">{{$trans_success_count}}</span></div>
-                                        <div class="stat-heading">Reservasi Berhasil</div>
+                                        <div class="stat-heading">Transaksi Berhasil</div>
                                     </div>
                                 </div>
                             </div>

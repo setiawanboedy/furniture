@@ -89,32 +89,48 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Pemesan</th>
+                                <th>Suplier</th>
                                 <th>Tanggal</th>
-                                <th>Alamat</th>
-                                <th>Total</th>
-                                <th>Status</th>
+                                <th>Catatan</th>
+                                <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @forelse ($items as $item) --}}
+                            @forelse ($supliers as $item)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->user_suplier->name }}</td>
+                                    <td>{{ $item->updated_at }}</td>
+                                    <td>{{ $item->note }}</td>
+                                    <td>
+                                        <a href="{{Storage::url($item->file)}}" class="btn btn-info">Unduh Laporan</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('suplier-admin.edit', $item->id) }}" class="btn btn-info">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+
+                                        <form action="{{route('suplier-admin.destroy', $item->id)}}" method="post" class="d-inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
-                            {{-- @empty --}}
+
+                            @empty
                                 <tr>
                                     <td colspan="7" class="text-center">
                                         Data Kosong
                                     </td>
                                 </tr>
-                            {{-- @endforelse --}}
+                            @endforelse
                         </tbody>
                     </table>
+
                 </div>
             </div>
 

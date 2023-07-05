@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Requests\Admin\ProductRequest;
 use Illuminate\Support\Str;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.product.create');
+        $categories = Category::get();
+        return view('pages.admin.product.create',[
+            'categories'=>$categories
+        ]);
     }
 
     /**
@@ -72,8 +76,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         $item = Product::findOrFail($id);
+        $categories = Category::get();
         return view('pages.admin.product.edit',[
-            'item'=>$item
+            'item'=>$item,
+            'categories'=>$categories
         ]);
     }
 
@@ -112,5 +118,18 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
         return redirect()->route('product.index');
+    }
+
+
+    // tambahan
+    public function addCategory(Request $request)
+    {
+        $request->validate([
+            'category'=> 'required|string'
+        ]);
+        $data = $request->all();
+        Category::create($data);
+
+        return redirect()->route('product.create');
     }
 }

@@ -62,11 +62,16 @@ Route::prefix('admin')
     ->middleware(['auth','admin'])
     ->group(function(){
         Route::get('/', 'DashboardController@index')->name('dashboard');
+
+        Route::post('product/category', 'ProductController@addCategory')->name('category.store');
         Route::resource('product', ProductController::class);
+
         Route::resource('gallery', GalleryController::class);
+
         Route::post('transaction/filter', 'TransactionController@filter')->name('filter-trans');
         Route::post('transaction/pdf', 'TransactionController@pdf')->name('pdf-trans');
         Route::resource('transaction', TransactionController::class);
+
         Route::resource('suplier-admin', SuplierAdminController::class);
     });
 

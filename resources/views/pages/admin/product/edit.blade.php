@@ -30,19 +30,32 @@
                         <label for="name">Nama Produk</label>
                         <input type="text" class="form-control" name="name" placeholder="Toko" value="{{$item->name}}">
                     </div>
-                    <div class="form-group">
-                        <label for="image">Gambar</label>
-                        <input type="file" name="image" placeholder="Gambar" class="form-control">
 
-                    </div>
                     <div class="form-group">
                         <label for="price">Harga</label>
                         <input type="number" class="form-control" name="price" placeholder="Harga" value="{{$item->price}}">
 
                     </div>
                     <div class="form-group">
+                        <label for="category">Kategori</label>
+                        <select name="category" required class="form-control">
+                            <option value="">Pilih Kategori</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->category }}">
+                                    {{ $category->category }}
+                                </option>
+                            @endforeach
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Gambar</label>
+                        <input type="file" name="image" placeholder="Gambar" class="form-control">
+
+                    </div>
+                    <div class="form-group">
                         <label for="desc">Deskripsi</label>
-                        <textarea name="desc" rows="10" class="d-block w-100 form-control">{{old('desc')}}</textarea>
+                        <textarea name="desc" rows="10" class="d-block w-100 form-control">{{$item->desc}}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                 </form>

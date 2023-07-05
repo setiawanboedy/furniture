@@ -18,7 +18,7 @@ class SuplierAdminController extends Controller
      */
     public function index()
     {
-        $supliers = SuplierReport::with(['user_suplier'])->get();
+        $supliers = SuplierReport::get();
 
         return view('pages.admin.report.index',[
             'supliers'=>$supliers

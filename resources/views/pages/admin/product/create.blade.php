@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Admin - Tambah Mebel')
+@section('title', 'Admin - Tambah Mebel')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid content" style="margin-left:-60px">
@@ -14,8 +14,7 @@
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-
+                        <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -23,23 +22,55 @@
 
         <div class="card shadow">
             <div class="card-body">
-                <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('category.store') }}" method="post">
+                    @csrf
+                    <label for="product_id">Tambah Kategori</label>
+                    <div class="row">
+
+                        <div class="col">
+                            <input type="text" class="form-control mb-lg-3" name="category" placeholder="Kategori"
+                                value="{{ old('category') }}">
+                        </div>
+                        <div class="col col-lg-auto">
+                            <button class="btn btn-info">Tambah</button>
+                        </div>
+
+                    </div>
+                </form>
+                <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="name">Nama Produk</label>
-                        <input type="text" class="form-control" name="name" placeholder="Name" value="{{old('name')}}">
+                        <input type="text" class="form-control" name="name" placeholder="Name"
+                            value="{{ old('name') }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Harga</label>
+                        <input type="number" name="price" placeholder="Harga" class="form-control"
+                            value="{{ old('price') }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Kategori</label>
+                        <select name="category" required class="form-control">
+                            <option value="">Pilih Kategori</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->category }}">
+                                    {{ $category->category }}
+                                </option>
+                            @endforeach
+
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="image">Gambar</label>
-                        <input type="file" name="image" placeholder="Image" class="form-control" value="{{old('image')}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Harga</label>
-                        <input type="number" name="price" placeholder="Harga" class="form-control" value="{{old('price')}}">
+                        <input type="file" name="image" placeholder="Image" class="form-control"
+                            value="{{ old('image') }}">
                     </div>
                     <div class="form-group">
                         <label for="desc">Deskripsi</label>
-                        <textarea name="desc" rows="10" class="d-block w-100 form-control">{{old('desc')}}</textarea>
+                        <textarea name="desc" rows="10" class="d-block w-100 form-control">{{ old('desc') }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>

@@ -19,11 +19,11 @@
                             <a href="{{ route('product-front') }}">Belanja</a>
                         </li>
                         <li>
-                            <a href="about.html">Tentang</a>
+                            <a href="#">Tentang</a>
                         </li>
 
                         <li>
-                            <a href="contact.html">Kontak</a>
+                            <a href="#">Kontak</a>
                         </li>
                     </ul>
                 </div>
@@ -69,16 +69,16 @@
                                 </a>
                                 <ul class="sub-menu" style="margin-left: -60px; margin-top: -10px">
                                     <li>
-                                        <a class="nav-link" href="{{ route('user-trans.index') }}"><i
-                                                ></i>Transaksi</a>
+                                        <a class="nav-link" href="{{ route('user-trans.index') }}"><i></i>Transaksi</a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#"><i ></i>Profil</a>
+                                        <a class="nav-link" href="#"><i></i>Profil</a>
                                     </li>
                                     <li>
                                         <form action="{{ route('logout') }}" method="post">
                                             @csrf
-                                            <button style="background-color: white;"><a class="nav-link"><i ></i>Logout</a></button>
+                                            <button style="background-color: white;"><a
+                                                    class="nav-link"><i></i>Logout</a></button>
                                         </form>
 
                                     </li>
@@ -96,7 +96,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="index.html"><img src="{{ url('frontend/logo/logo.png') }}" alt="IMG-LOGO"></a>
+            <a href="{{ route('home') }}"><img src="{{ url('frontend/logo/logo.png') }}" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
@@ -105,15 +105,21 @@
                 <i class="zmdi zmdi-search"></i>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
-                data-notify="2">
-                <i class="zmdi zmdi-shopping-cart"></i>
-            </div>
+            @auth
+                <a href="{{ route('cart.list') }}">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
+                        data-notify="{{ $cartCount }}">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </div>
+                </a>
+            @endauth
+            @guest
+                <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 js-show-cart">
+                    <i class="zmdi zmdi-shopping-cart"></i>
+                </div>
+            @endguest
 
-            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
-                data-notify="0">
-                <i class="zmdi zmdi-favorite-outline"></i>
-            </a>
+
         </div>
 
         <!-- Button show menu -->
@@ -128,23 +134,18 @@
     <!-- Menu Mobile -->
     <div class="menu-mobile">
         <ul class="main-menu-m">
+            <li class="{{ request()->is('/') ? 'active-menu' : '' }}">
+                <a href="{{ route('home') }}">Beranda</a>
+            </li>
+            <li class="{{ request()->is('product-mebel') ? 'active-menu' : '' }}">
+                <a href="{{ route('product-front') }}">Belanja</a>
+            </li>
             <li>
-                <a href="index.html">Beranda</a>
-
-                <span class="arrow-main-menu-m">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </span>
+                <a href="#">Tentang</a>
             </li>
 
             <li>
-                <a href="product.html">Belanja</a>
-            </li>
-            <li>
-                <a href="about.html">Tentang</a>
-            </li>
-
-            <li>
-                <a href="contact.html">Kontak</a>
+                <a href="#">Kontak</a>
             </li>
         </ul>
     </div>

@@ -180,9 +180,16 @@
                                                         {{$rating->username}}
                                                     </span>
 
+                                                    @php
+                                                        $res_rating = 5 - $rating->rating;
+                                                    @endphp
+
                                                     <span class="fs-18 cl11">
                                                         @for ($i = 0; $i < $rating->rating; $i++)
                                                         <i class="zmdi zmdi-star"></i>
+                                                        @endfor
+                                                        @for ($i = 0; $i < $res_rating; $i++)
+                                                        <i class="zmdi zmdi-star-outline"></i>
                                                         @endfor
 
                                                     </span>

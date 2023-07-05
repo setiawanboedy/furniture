@@ -16,7 +16,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $items = Transaction::with(['user'])->get();
+        $items = Transaction::get();
 
         return view('pages.admin.transaction.index',[
             'items'=>$items,

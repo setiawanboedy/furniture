@@ -154,18 +154,11 @@
                         Semua
                     </button>
 
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".kursi">
-                        Kursi
+                    @foreach ($categories as $item)
+                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".{{$item->category}}">
+                        {{$item->category}}
                     </button>
-
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".meja">
-                        Meja
-                    </button>
-
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-                        Lainnya
-                    </button>
-
+                    @endforeach
 
                 </div>
 
@@ -264,7 +257,7 @@
 
             <div class="row isotope-grid">
                 @forelse ($products as $product)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item kursi">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{$product->category}}">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0 product-size">
@@ -288,7 +281,7 @@
                                         $total = count($product->ratings);
                                         $sum = $product->ratings->sum('rating');
                                         $stars = ceil($total > 0 ? $sum / $total : 0);
-                                        $remainder = $sum % $total;
+                                        $remainder = $total > 0 ? $sum % $total : 0;
                                         if ($remainder != 0) {
 
                                             $stars_outlined = 5 - $stars-1;

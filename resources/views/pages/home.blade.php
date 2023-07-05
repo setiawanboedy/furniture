@@ -81,11 +81,11 @@
                                     <div class="block2">
                                         <div class="block2-pic hov-img0 recom-size">
                                             <div class="image-wrapper">
-                                                <img class="d-block w-100 img-fluid" src="{{ Storage::url($product->image) }}"
+                                                <img class="d-block w-100 img-fluid" src="{{ Storage::url($item->image) }}"
                                                     alt="IMG-PRODUCT">
                                             </div>
 
-                                            <a href="{{ route('detail', $product->slug) }}"
+                                            <a href="{{ route('detail', $item->slug) }}"
                                                 class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
                                                 Lihat
                                             </a>
@@ -95,11 +95,11 @@
                                             <div class="block2-txt-child1 flex-col-l ">
                                                 <a href="product-detail.html"
                                                     class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                                    {{ $product->name }}
+                                                    {{ $item->name }}
                                                 </a>
 
                                                 <span class="stext-105 cl3">
-                                                    {{ 'Rp ' . number_format($product->price, 0, ',', '.') }}
+                                                    {{ 'Rp ' . number_format($item->price, 0, ',', '.') }}
                                                 </span>
                                             </div>
 

@@ -15,6 +15,9 @@
                     <li class="{{ request()->is('admin/transaction') ? 'active' : '' }}">
                         <a href="{{ route('transaction.index') }}"><i class="menu-icon fa fa-money"></i>Transaksi </a>
                     </li>
+                    <li class="{{ request()->is('admin/suplier-admin') ? 'active' : '' }}">
+                        <a href="{{ route('suplier-admin.index') }}"><i class="menu-icon fa fa-file-text-o"></i>Laporan </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

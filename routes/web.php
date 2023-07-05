@@ -65,6 +65,14 @@ Route::prefix('admin')
         Route::resource('product', ProductController::class);
         Route::resource('gallery', GalleryController::class);
         Route::resource('transaction', TransactionController::class);
+        Route::resource('suplier-admin', SuplierAdminController::class);
+    });
+
+    Route::prefix('suplier')
+    ->namespace('App\Http\Controllers\Suplier')
+    ->middleware(['auth','suplier'])
+    ->group(function(){
+        Route::get('/', 'SuplierController@index')->name('suplier.index');
     });
 
 Auth::routes();

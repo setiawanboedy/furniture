@@ -3,8 +3,8 @@
 
 @section('content')
     <div style="min-height: 8em"></div>
-    <div class="container mb-50 mx-5">
-
+    <div class="container mb-50">
+        <div class="h4 py-lg-3">Daftar Transaksi</div>
         <div class="row">
             <div class="col">
 

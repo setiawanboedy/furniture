@@ -9,7 +9,7 @@ class ProductDetailController extends Controller
 {
     public function index(Request $request, $slug)
     {
-        $product = Product::with(['product_galleries'])->where('slug', $slug)->firstOrFail();
+        $product = Product::with(['product_galleries','ratings'])->where('slug', $slug)->firstOrFail();
 
         return view('pages.product-detail',[
             'product'=>$product

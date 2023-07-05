@@ -149,10 +149,32 @@
 
                             <div class="block2-txt flex-w flex-t p-t-14">
                                 <div class="block2-txt-child1 flex-col-l ">
-                                    <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    <a class=" stext-105 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                         {{ $product->name }}
                                     </a>
+                                    @php
+                                        $total = count($product->ratings);
+                                        $sum = $product->ratings->sum('rating');
+                                        $stars = ceil($total > 0 ? $sum / $total : 0);
+                                        $remainder = $sum % $total;
+                                        if ($remainder != 0) {
 
+                                            $stars_outlined = 5 - $stars-1;
+                                        }else {
+                                            $stars_outlined = 5 - $stars;
+                                        }
+                                    @endphp
+                                    <span class="fs-18 cl11">
+                                        @for ($i = 0; $i < $stars; $i++)
+                                        <i class="zmdi zmdi-star"></i>
+                                        @endfor
+                                        @if ($remainder !== 0)
+                                        <i class="zmdi zmdi-star-half"></i>
+                                        @endif
+                                        @for ($i = 0; $i < $stars_outlined; $i++)
+                                        <i class="zmdi zmdi-star-outline"></i>
+                                        @endfor
+                                    </span>
                                     <span class="stext-105 cl3">
                                         {{ 'Rp ' . number_format($product->price, 0, ',', '.') }}
                                     </span>

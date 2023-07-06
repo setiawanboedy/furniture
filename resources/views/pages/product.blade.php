@@ -197,5 +197,10 @@
                 @endforelse
             </div>
         </div>
+        <div class="container">
+            <div class="d-flex justify-content-center mt-lg-4">
+                {{ $products->links('pagination::bootstrap-4') }}
+            </div>
+        </div>
     </div>
 @endsection

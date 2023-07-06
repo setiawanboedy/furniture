@@ -9,7 +9,9 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $products = Product::get();
+        // $products = Product::get()->take(6);
+        $products = Product::paginate(12);
+        // dd($paginates);
         $categories = Product::select('category')->distinct()->get();
         return view('pages.product',[
             'products'=>$products,

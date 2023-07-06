@@ -17,17 +17,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory()->count(20)->create();
-        // DB::table('users')->insert([
-        //     'name' => 'sinaga',
-        //     'email' => 'rendi@admin.com',
-        //     'password' => Hash::make('sinagarendi'),
-        //     'roles'=> 'ADMIN',
-        // ]);
-        // DB::table('users')->insert([
-        //     'name' => 'rendi',
-        //     'email' => 'sinaga@suplier.com',
-        //     'password' => Hash::make('sinagarendi'),
-        //     'roles'=> 'SUPLIER',
-        // ]);
+        DB::table('users')->insert([
+            'name' => 'sinaga',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admin'),
+            'roles'=> 'ADMIN',
+        ]);
+        DB::table('users')->insert([
+            'name' => 'rendi',
+            'email' => 'suplier@suplier.com',
+            'password' => Hash::make('suplier'),
+            'roles'=> 'SUPLIER',
+        ]);
     }
 }

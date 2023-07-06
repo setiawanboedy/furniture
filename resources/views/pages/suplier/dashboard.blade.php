@@ -12,74 +12,12 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-1">
-                                    <i class="pe-7s-home"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib">
-                                        <div class="stat-text"></span></div>
-                                        <div class="stat-heading">Restoran</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="h4">Laporan Suplier</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-2">
-                                    <i class="pe-7s-users"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib">
-                                        <div class="stat-text"></span></div>
-                                        <div class="stat-heading">Pemesan</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-3">
-                                    <i class="pe-7s-browser"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib">
-                                        <div class="stat-text"></span></div>
-                                        <div class="stat-heading">Reservasi Berhasil</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="stat-widget-five">
-                                <div class="stat-icon dib flat-color-4">
-                                    <i class="pe-7s-browser"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="text-left dib">
-                                        <div class="stat-text"></span></div>
-                                        <div class="stat-heading">Reservasi Pending</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- /Widgets -->
             <!--  Traffic  -->

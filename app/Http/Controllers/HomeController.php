@@ -12,7 +12,8 @@ class HomeController extends Controller
 {
     public function index(Request $request, RecommendationProductController $recommendC)
     {
-        $products = Product::get();
+        $products = Product::get()->take(12);
+
         $user = Auth::user();
         $categories = Product::select('category')->distinct()->get();
 

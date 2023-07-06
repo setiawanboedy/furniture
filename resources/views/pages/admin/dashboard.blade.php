@@ -73,7 +73,7 @@
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text">{{$trans_pending_count}}</span></div>
-                                        <div class="stat-heading">Reservasi Pending</div>
+                                        <div class="stat-heading">Transaksi Pending</div>
                                     </div>
                                 </div>
                             </div>

@@ -73,6 +73,9 @@ Route::prefix('admin')
         Route::resource('transaction', TransactionController::class);
 
         Route::resource('suplier-admin', SuplierAdminController::class);
+
+        Route::get('managemen', 'ManagementController@index')->name('manage.index');
+        Route::post('managemen', 'ManagementController@role')->name('manage.update');
     });
 
     Route::prefix('suplier')

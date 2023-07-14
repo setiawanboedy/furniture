@@ -32,8 +32,11 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::get();
+
+        $supliers = User::where('roles','SUPLIER')->get();
         return view('pages.admin.product.create',[
-            'categories'=>$categories
+            'categories'=>$categories,
+            'supliers'=>$supliers
         ]);
     }
 

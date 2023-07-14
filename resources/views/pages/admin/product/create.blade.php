@@ -44,7 +44,18 @@
                         <input type="text" class="form-control" name="name" placeholder="Name"
                             value="{{ old('name') }}">
                     </div>
+                    <div class="form-group">
+                        <label for="suplier_id">Suplier</label>
+                        <select name="suplier_id" required class="form-control">
+                            <option value="">Pilih Suplier</option>
+                            @foreach ($supliers as $suplier)
+                                <option value="{{ $suplier->id }}">
+                                    {{ $suplier->name }}
+                                </option>
+                            @endforeach
 
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="price">Harga</label>
                         <input type="number" name="price" placeholder="Harga" class="form-control"

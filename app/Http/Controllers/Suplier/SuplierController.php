@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Suplier;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SuplierReport;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class SuplierController extends Controller
 {
@@ -16,10 +18,21 @@ class SuplierController extends Controller
      */
     public function index()
     {
-        $userId = Auth::user()->id;
-        $supliers = SuplierReport::where('suplier_id',$userId)->get();
+        $suplierId = Auth::user()->id;
+        $transactions = Transaction::whereHas('details.product', function($query) use ($suplierId){
+            $query->where('suplier_id', $suplierId);
+        })->get();
+
+
+        // $product_count = Product::count();
+        $trans_count = $transactions->count();
+        $trans_success_count = $transactions->where('transaction_status','SUCCESS')->count();
+        $trans_pending_count = $transactions->where('transaction_status','PENDING')->count();
         return view('pages.suplier.dashboard',[
-            'supliers'=>$supliers
+            'trans_count'=>$trans_count,
+            'trans_success_count'=>$trans_success_count,
+            'trans_pending_count'=>$trans_pending_count,
+            'items'=>$transactions
         ]);
     }
 
@@ -52,7 +65,13 @@ class SuplierController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Transaction::with([
+            'details', 'user'
+        ])->findOrFail($id);
+
+        return view('pages.suplier.detail',[
+            'item' => $item
+        ]);
     }
 
     /**
@@ -87,5 +106,16 @@ class SuplierController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function pdf(Request $request)
+    {
+        $suplierId = Auth::user()->id;
+        $transactions = Transaction::whereHas('details.product', function($query) use ($suplierId){
+            $query->where('suplier_id', $suplierId);
+        })->get();
+
+        $pdf = PDF::loadview('pages.suplier.pdf',['items'=>$transactions]);
+        return $pdf->download('laporan-transaction.pdf');
     }
 }

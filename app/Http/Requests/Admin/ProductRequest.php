@@ -24,6 +24,7 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
+            'suplier_id'=>'required',
             'name'=>'required|max:255',
             'category'=>'required|max:255',
             'image'=>'required|image',

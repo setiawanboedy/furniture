@@ -82,7 +82,9 @@ Route::prefix('admin')
     ->namespace('App\Http\Controllers\Suplier')
     ->middleware(['auth','suplier'])
     ->group(function(){
-        Route::get('/', 'SuplierController@index')->name('suplier.index');
+        Route::post('/', 'SuplierController@pdf')->name('pdf-suplier');
+        Route::get('/', 'SuplierController@index')->name('suplier-dashboard');
+        Route::resource('suplier', SuplierController::class);
     });
 
 Auth::routes();

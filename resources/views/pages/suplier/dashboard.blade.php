@@ -1,6 +1,6 @@
 @extends('layouts.suplier')
 
-@section('title', 'Suplier - Nisa Mebel')
+@section('title', 'Suplier - Kekalik Mebel')
 
 @section('content')
     <!-- Begin Page Content -->
@@ -31,7 +31,6 @@
                                 <th>Tanggal</th>
                                 <th>Catatan</th>
                                 <th>File</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,19 +42,6 @@
                                     <td>{{ $item->note }}</td>
                                     <td>
                                         <a href="{{Storage::url($item->file)}}" class="btn btn-info">Unduh Laporan</a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('suplier-admin.edit', $item->id) }}" class="btn btn-info">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-
-                                        <form action="{{route('suplier-admin.destroy', $item->id)}}" method="post" class="d-inline">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                        </form>
                                     </td>
                                 </tr>
 

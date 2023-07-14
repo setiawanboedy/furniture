@@ -26,7 +26,6 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-
         $data = $request->all();
         $idItem = Cart::where('product_id',$request->product_id)->first();
         $userId = Auth::user()->id;
@@ -43,6 +42,7 @@ class CartController extends Controller
             $data['user_id'] = $userId;
             Cart::create($data);
         }
+
         return redirect()->route('cart.list');
     }
 
@@ -99,6 +99,10 @@ class CartController extends Controller
             ]);
         }
 
-        return redirect()->route('payment.index', $transaction->id);
+        if ($request->pay_method == 1) {
+            return redirect()->route('user-trans.index');
+        } else {
+            return redirect()->route('payment.index', $transaction->id);
+        }
     }
 }

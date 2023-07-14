@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title', 'Daftar - Nisa Mebel')
+@section('title', 'Daftar - Kekalik Mebel')
 @section('content')
 
     <div class="flex flex-col overflow-y-auto md:flex-row">

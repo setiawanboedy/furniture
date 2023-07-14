@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Keranjang - Nisa Mebel
+    Keranjang - Kekalik Mebel
 @endsection
 
 @section('content')
@@ -103,8 +103,6 @@
                         </div>
 
                         <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
-
-
                         </div>
                     </div>
                 </div>
@@ -117,7 +115,7 @@
 
                         <div class="flex-w flex-t bor12 p-b-3">
                         </div>
-                        <form action="{{route('cart.checkout')}}" method="post">
+                        <form action="{{ route('cart.checkout') }}" method="post">
                             @csrf
                             <div class="flex-w flex-t bor12 p-t-15 p-b-30">
                                 <div class="size-208 w-full-ssm">
@@ -145,25 +143,31 @@
 
                                         <div class="bor8 bg0 m-b-12">
                                             <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
-                                                placeholder="Kecamatan" >
+                                                placeholder="Kecamatan">
                                         </div>
 
                                         <div class="bor8 bg0 m-b-22">
                                             <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number"
                                                 name="postcode" placeholder="Kode Pos">
                                         </div>
-
                                     </div>
                                 </div>
+
+                                <label for="pay_method">Pilih Metode Transaksi</label>
+                                <select name="pay_method" required class="form-control">
+                                    <option value="1">COD</option>
+                                    <option value="2">Transfer</option>
+                                </select>
+
                             </div>
 
                             <div class="flex-w flex-t p-t-27 p-b-33">
+
                                 <div class="size-208">
                                     <span class="mtext-101 cl2">
                                         Total:
                                     </span>
                                 </div>
-
                                 <div class="size-209 p-t-1">
                                     <span class="mtext-110 cl2">
                                         {{ 'Rp ' . number_format($total, 0, ',', '.') }}

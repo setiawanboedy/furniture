@@ -47,7 +47,7 @@ class SuplierAdminController extends Controller
     public function store(ReportRequest $request)
     {
         $data = $request->all();
-        dd($data)
+
 ;        $data['file'] = $request->file('file')->store(
             'assets/report', 'public'
         );
@@ -92,7 +92,7 @@ class SuplierAdminController extends Controller
     public function update(ReportRequest $request, $id)
     {
         $data = $request->all();
-        dd($data);
+        
         $data['file'] = $request->file('file')->store(
             'assets/report', 'public'
         );

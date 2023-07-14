@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Nisa - Mebel
+    Kekalik - Mebel
 @endsection
 
 @section('content')

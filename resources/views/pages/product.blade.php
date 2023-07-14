@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Produk Nisa Mebel
+    Produk Kekalik Mebel
 @endsection
 
 @section('content')
